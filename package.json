@@ -1,0 +1,40 @@
+{
+  "name": "DocReadWrite-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "latest",
+    "@element-plus/icons": "^0.0.11",
+    "@element-plus/icons-vue": "^2.1.0",
+    "animate.css": "^4.1.1",
+    "ant-design": "^1.0.0",
+    "ant-design-vue": "^3.2.15",
+    "axios": "^1.4.0",
+    "element-plus": "^2.2.26",
+    "element-ui": "^2.15.13",
+    "sass": "^1.56.2",
+    "sass-loader": "^13.2.0",
+    "vue": "^3.2.13",
+    "vue-mobile-audio": "^0.1.3",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "typescript": "~4.5.5",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
