@@ -104,18 +104,35 @@
                 </el-menu-item>
             </el-menu-item-group>
         </el-sub-menu>
-        <el-menu-item index="3" disabled>
-            <el-icon>
-                <document/>
-            </el-icon>
-            <template #title>Navigator Three</template>
-        </el-menu-item>
-        <el-menu-item index="4">
-            <el-icon>
-                <setting/>
-            </el-icon>
-            <template #title>Navigator Four</template>
-        </el-menu-item>
+        <el-sub-menu index="3">
+        <template #title>
+          <el-icon>
+            <location/>
+          </el-icon>
+          <span>指导记录表处理</span>
+        </template>
+        <el-menu-item-group>
+          <template #title><span>指导记录表处理</span></template>
+
+          <el-menu-item v-if="lockStudent" index="3-1">
+            <file-outlined/>
+            <span style="margin-left:15px">
+                    <router-link to="/tasks">学生指导记录表列表</router-link>
+                    </span>
+          </el-menu-item>
+
+          <el-menu-item v-if="lockTeacher" index="3-2">
+            <file-outlined/>
+            <span style="margin-left:15px">
+                    <router-link to="/instruction-record-form">编辑指导记录表</router-link>
+                    </span>
+          </el-menu-item>
+        </el-menu-item-group>
+        <!--            <el-sub-menu index="1-4">-->
+        <!--                <template #title><span>item four</span></template>-->
+        <!--                <el-menu-item index="1-4-1">item one</el-menu-item>-->
+        <!--            </el-sub-menu>-->
+      </el-sub-menu>
     </el-menu>
 </template>
 

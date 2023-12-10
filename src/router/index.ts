@@ -10,6 +10,7 @@ import StudentDateInfo from "../components/StudentDateInfo.vue"
 import UploadStudentSheet from "../components/UploadStudentSheet.vue"
 import UploadMajorUnitedPlan from "../components/UploadMajorUnitedPlan.vue"
 import UploadStudentSignature from "../components/UploadStudentSignature.vue"
+import InstructionRecordForm from "../components/InstructionRecordForm.vue"
 
 const routes: Array<RouteRecordRaw> = [
 
@@ -69,7 +70,12 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: "/taskform",
         component: TaskForm,
-        name: "TaskInput"
+        name: "TaskForm"
+    },
+    {
+        path: "/instruction-record-form",
+        component: InstructionRecordForm,
+        name: "InstructionRecordForm"
     },
 
     {
