@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="content-header">
-      <h1>任务书学生信息</h1>
+      <h1>指导记录表学生信息</h1>
     </div>
     <div class="app-container">
       <div class="box">
@@ -51,10 +51,10 @@
                 删除
               </el-button>
 
-              <el-radio-group v-model="scope.row.lockTask" @change="handleLockOrNot(scope)">
-                <el-radio :label="1">Lock</el-radio>
-                <el-radio :label="2">Unlock</el-radio>
-              </el-radio-group>
+              <!--              <el-radio-group v-model="scope.row.lockTask" @change="handleLockOrNot(scope)">-->
+              <!--                <el-radio :label="1">Lock</el-radio>-->
+              <!--                <el-radio :label="2">Unlock</el-radio>-->
+              <!--              </el-radio-group>-->
 
             </template>
           </el-table-column>
@@ -222,7 +222,7 @@ const handleLockOrNot = (row) => {
 const handleUpdate = (row) => {
   localStorage.setItem("currentStudentSno", row.row.sno)
   sessionStorage.setItem("currentStudentName", row.row.studentName)
-  router.push("/taskform")
+  router.push("/instruction-record-form")
 };
 
 // 修改

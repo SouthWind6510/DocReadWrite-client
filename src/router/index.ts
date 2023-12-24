@@ -2,6 +2,7 @@ import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router'
 import LoginView from '../components/Login.vue'
 import TaskView from '../components/Task.vue'
 import UploadStudentS from "../components/UploadStudentSignature.vue";
+import UploadStudentSignature from "../components/UploadStudentSignature.vue";
 import TaskForm from "../components/TaskForm.vue";
 import LogoutView from "../components/Logout.vue";
 import UploadTeacherSignature from "../components/UploadTeacherSignature.vue";
@@ -9,8 +10,8 @@ import StudentSignatureInfo from "../components/StudentSignatureInfo.vue"
 import StudentDateInfo from "../components/StudentDateInfo.vue"
 import UploadStudentSheet from "../components/UploadStudentSheet.vue"
 import UploadMajorUnitedPlan from "../components/UploadMajorUnitedPlan.vue"
-import UploadStudentSignature from "../components/UploadStudentSignature.vue"
 import InstructionRecordForm from "../components/InstructionRecordForm.vue"
+import InstructionRecordList from "../components/InstructionRecordList.vue"
 
 const routes: Array<RouteRecordRaw> = [
 
@@ -73,6 +74,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "TaskForm"
     },
     {
+        path: "/instruction-record-list",
+        component: InstructionRecordList,
+        name: "InstructionRecordList"
+    },
+    {
         path: "/instruction-record-form",
         component: InstructionRecordForm,
         name: "InstructionRecordForm"
@@ -104,7 +110,8 @@ router.beforeEach((to, from) => {
     return true
 });
 
-router.afterEach(() => {})
+router.afterEach(() => {
+})
 
 
 export default router

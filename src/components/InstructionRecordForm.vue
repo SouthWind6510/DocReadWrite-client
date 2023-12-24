@@ -8,7 +8,7 @@
     <div>班级:{{ formData.formHeaderData.className }}</div>
     <div style="color: blue">姓名:{{ formData.formHeaderData.studentName }}</div>
     <div>学号:{{ formData.formHeaderData.sno }}</div>
-    <div style="color: red">锁定状态: {{ showlockState }}</div>
+    <!--    <div style="color: red">锁定状态: {{ showlockState }}</div>-->
     <el-divider/>
   </div>
 
@@ -32,13 +32,13 @@
     </el-table-column>
   </el-table>
 
-  <el-divider/>
-  <div align="center">
-    <el-button size="large" type="success" @click="showPDF">文档预览</el-button>
-    <el-button size="large" type="success" @click="downloadWord">下载Word版</el-button>
-    <el-button size="large" type="success" @click="downloadPDF">下载PDF版</el-button>
-    <el-button size="large" type="success" @click="showvuePDF">vue文档预览</el-button>
-  </div>
+  <!--  <el-divider/>-->
+  <!--  <div align="center">-->
+  <!--    <el-button size="large" type="success" @click="showPDF">文档预览</el-button>-->
+  <!--    <el-button size="large" type="success" @click="downloadWord">下载Word版</el-button>-->
+  <!--    <el-button size="large" type="success" @click="downloadPDF">下载PDF版</el-button>-->
+  <!--    <el-button size="large" type="success" @click="showvuePDF">vue文档预览</el-button>-->
+  <!--  </div>-->
 
   <!-- 编辑指导记录对话框 -->
   <div class="add-form">
@@ -126,9 +126,9 @@ const formData = ref({
   },
 });
 
-const showlockState = ref(computed<String>(() => {
-  return formData.value.formHeaderData.lockTask == 1 ? "指导记录修改锁定" : "指导记录修改解锁"
-}))
+// const showlockState = ref(computed<String>(() => {
+//   return formData.value.formHeaderData.lockTask == 1 ? "指导记录修改锁定" : "指导记录修改解锁"
+// }))
 
 const lockFlag = ref(computed<boolean>(() => {
   return formData.value.formHeaderData.lockTask == 1
@@ -141,7 +141,7 @@ let ipurl = "localhost:80"
 const downloadWord = () => {
   // insertorupdate()
   setTimeout(() => {
-    let url = ipurl + "/taskform/downloadword/" + "?userName=" + localStorage.getItem("currentStudentSno")
+    let url = ipurl + "/instruction_record/downloadword/" + "?userName=" + localStorage.getItem("currentStudentSno")
     let path = window.location.protocol + '//' + url
     // window.location.href = path
     window.open(path, "_blank")
@@ -152,7 +152,7 @@ const downloadPDF = () => {
 
   // insertorupdate()
   setTimeout(() => {
-    let url = ipurl + "/taskform/downloadpdf/" + "?userName=" + localStorage.getItem("currentStudentSno")
+    let url = ipurl + "/instruction_record/downloadpdf/" + "?userName=" + localStorage.getItem("currentStudentSno")
     let path = window.location.protocol + '//' + url
     // window.location.href = path
     window.open(path, "_blank")
@@ -165,7 +165,7 @@ const downloadPDF = () => {
 const showPDF = () => {
   // insertorupdate()
   setTimeout(() => {
-    let url = ipurl + "/taskform/showpdf/" + "?userName=" + localStorage.getItem("currentStudentSno")
+    let url = ipurl + "/instruction_record/showpdf/" + "?userName=" + localStorage.getItem("currentStudentSno")
     let path = window.location.protocol + '//' + url
     // window.location.href = path
     window.open(path, "_blank")
@@ -174,7 +174,7 @@ const showPDF = () => {
 
 
 const showvuePDF = () => {
-  const url = "/taskform/vuepdf/" + localStorage.getItem("currentStudentSno")
+  const url = "/instruction_record/vuepdf/" + localStorage.getItem("currentStudentSno")
   console.log(url)
   axios.post(url).then((res) => {
     console.log(res)
